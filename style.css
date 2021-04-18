@@ -74,7 +74,7 @@ form {
     background-color: #0d3133;
 }
 
-button {
+#addBtn {
     background-color: #DAF1DE !important;
     color: #222 !important;
     border-color: #092729 !important;
