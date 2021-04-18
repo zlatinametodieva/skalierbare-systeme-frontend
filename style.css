@@ -55,6 +55,8 @@ footer {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 30px;
+    position: absolute;
+    bottom: 0px
 }
 a.footer-link {
     color: #efe9ce;
@@ -62,5 +64,19 @@ a.footer-link {
 }
 a:hover{
     color: #fff;
+}
+form {
+    color: #efe9ce;
+    border: 1px solid #efe9ce;
+    padding: 20px;
+    margin: 10px auto;
+    width: 30%;
+    background-color: #0d3133;
+}
+
+button {
+    background-color: #DAF1DE !important;
+    color: #222 !important;
+    border-color: #092729 !important;
 }
 
