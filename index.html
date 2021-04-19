@@ -16,7 +16,7 @@
 <nav class="navbar navbar-expand-lg navbar-custom">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html">TO-DO TRACKER</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" id="btntoggler">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -70,48 +70,25 @@
 </footer>
 
 <script>
-  var clicked = false;
-  var toggler = document.getElementById("btntoggler");
   var navbarcollapse = document.getElementById("navbarResponsive");
 
-  function collapsingNavbar(){
-    // Get width and height of the window excluding scrollbars
+  <!-- Event listener -->
+
+  // collapse navbar on resize
+  window.addEventListener("resize", () => {
     var w = document.documentElement.clientWidth;
     var h = document.documentElement.clientHeight;
     if (w >= 992) {
       navbarcollapse.classList.remove("show");
-      clicked = !clicked;
     }
-  }
-
-  function outsideClick(event, notelem)	{
-    notelem = $(notelem);
-    var clickedOut = true, i, len = notelem.length;
-    for (i = 0;i < len;i++)  {
-      if (event.target == notelem[i] || notelem[i].contains(event.target)) {
-        clickedOut = false;
-      }
-    }
-    if (clickedOut) return true;
-    else return false;
-  }
-
-  <!-- Event listener -->
-
-  toggler.addEventListener('click',() => {
-    clicked = !clicked
   })
-
-  // collapse navbar on resize
-  window.addEventListener("resize", collapsingNavbar);
-
   // collapse navbar on focusout
-  document.addEventListener('click', function(e) {
-    if (outsideClick(e, navbarcollapse)) {
+  document.addEventListener("click", (event) => {
+    let clickedElement = event.target; // clicked element
+    if (clickedElement != navbarcollapse) {
       $('.collapse').collapse('hide');
-      clicked = !clicked
     }
-  })
+  });
 </script>
 </body>
 </html>
