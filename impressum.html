@@ -86,6 +86,7 @@
     document.addEventListener('click', function(e) {
         if (outsideClick(e, navbarcollapse)) {
             $('.collapse').collapse('hide');
+            clicked = !clicked
         }
     })
 </script>
