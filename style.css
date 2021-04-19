@@ -16,7 +16,7 @@ html, body {
     background-color: #0d3133;
     height: 60px;
     padding-left: 20px;
-    padding-right: 35px;
+    padding-right: 10px;
     z-index: 9999;
 }
 
@@ -92,7 +92,6 @@ form {
     border: 1px solid #efe9ce;
     padding: 20px;
     margin: 40px auto;
-    width: 30%;
     background-color: #0d3133;
 }
 
