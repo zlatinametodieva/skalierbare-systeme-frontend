@@ -31,22 +31,45 @@ html, body {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");position: relative;
 }
 
+.navbar-toggler {
+    margin-bottom: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.navbar-toggler:focus, .navbar-toggler-icon {
+    outline: none;
+}
+
+.navbar-toggler:focus, .navbar-collapse.show {
+    background-color: #235347;
+}
+
+.navbar-toggler.collapsed {
+    background-color: #0d3133;
+}
+
+.navbar-toggler.collapsed:hover {
+    background-color: #235347;
+}
+
 .navbar-collapse.collapsing, .navbar-collapse.show {
     border-top-color: gray;
     border-top-width: 1px;
     border-top-style: solid;
-    margin-right: 10px
+    padding-top: 8px;
 }
 
-.navbar-toggler {
-    margin-bottom: 5px;
+.navbar-collapse.show {
+    background-color: #0d3133;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 12px;
-    padding-left: 12px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 1.5rem;
     color: #efe9ce;
     background-color: #0d3133;
 }
@@ -61,8 +84,8 @@ html, body {
 
 /*  TODOs  */
 .padding {
+    /*3rem top and bottom*/
     padding-top: 3rem;
-    padding-bottom: 3rem;
 }
 
 .padding hr {
@@ -70,6 +93,62 @@ html, body {
     width: 30%;
     margin-top: .3rem;
     margin-bottom: 1rem;
+}
+
+.btn-dlt {
+    background-color: #BC5449;
+    border-color: #222;
+    border-radius: 0.4rem;
+}
+
+.btn-dlt:hover {
+    background-color: #c03324;
+    border-color: #222;
+}
+
+.btn-edt {
+    color: #222;
+    background-color: #8EB69B;
+    border-color: #222;
+    border-radius: 0.4rem;
+}
+
+.btn-edt:hover {
+    color: #222;
+    background-color: #99cca8;
+    border-color: #222;
+}
+
+th {
+    background-color: #faede3;
+}
+
+tr {
+    background-color: #fcf2ed;
+}
+
+.table-hover {
+    background-color: #ffefe3;
+}
+
+.index {
+    width: 1% !important;
+}
+
+.do {
+    width: 40% !important;
+}
+
+.percent {
+    width: 1% !important;
+}
+
+.edt {
+    width: 4% !important;
+}
+
+.dlt {
+    width: 4% !important;
 }
 
 /*  Footer  */
