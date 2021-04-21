@@ -116,6 +116,14 @@ tr:hover {
     background-color: #fcf2ed;
 }
 
+th {
+    background-color: #ffefe3;
+}
+
+th:hover {
+    background-color: #fde6d5;
+}
+
 /*  FOOTER  */
 footer {
     width: 100%;
