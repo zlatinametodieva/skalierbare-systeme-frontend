@@ -12,62 +12,64 @@
 </head>
 
 <body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">TO-DO TRACKER</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">MY TODOs</a></li>
-                <li class="nav-item"><a class="nav-link" href="addTodo.html">ADD TODO</a></li>
-                <li class="nav-item"><a class="nav-link" href="editDemonstration.html">DEMO?</a></li>
-            </ul>
-        </div>
+    <div class="d-flex flex-column min-vh-100">
+        <!--Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">TO-DO TRACKER</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">MY TODOs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="addTodo.html">ADD TODO</a></li>
+                        <li class="nav-item"><a class="nav-link" href="editDemonstration.html">HOW TO EDIT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--Impressum-->
+        <main class="flex-fill">
+            <div class="container-fluid padding">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <h5><strong>This website was created by:</strong></h5>
+                        <h6>Ronen Shitrit and Zlatina Metodieva</h6>
+                    </div>
+                    <hr>
+                    <div class="col-12">
+                        <p><a href="https://www.freepik.com/vectors/frame" target="_blank">Frame vector created by rawpixel.com - www.freepik.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--Footer-->
+        <footer>
+            <a class="footer-link active" href="impressum.html">Impressum</a>
+        </footer>
+
+        <script>
+            var navbarcollapse = document.getElementById("navbarResponsive");
+        
+            // Event listener
+        
+            // collapse navbar on resize
+            window.addEventListener("resize", () => {
+                var w = document.documentElement.clientWidth;
+                var h = document.documentElement.clientHeight;
+                if (w >= 992) {
+                    navbarcollapse.classList.remove("show");
+                }
+            })
+            // collapse navbar on focusout
+            document.addEventListener("click", (event) => {
+                let clickedElement = event.target; // clicked element
+                if (clickedElement != navbarcollapse) {
+                    $('.collapse').collapse('hide');
+                }
+            });
+        </script>
     </div>
-</nav>
-
-<!-- Impressum -->
-<div class="container-fluid padding">
-    <div class="row text-center">
-        <div class="col-12">
-            <h5><strong>This website was created by:</strong></h5>
-            <h6>Ronen Shitrit and Zlatina Metodieva</h6>
-        </div>
-        <hr>
-        <div class="col-12">
-            <p><a href="https://www.freepik.com/vectors/frame" target="_blank">Frame vector created by rawpixel.com - www.freepik.com</a></p>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer>
-    <a class="footer-link active" style="text-decoration: none" href="impressum.html">Impressum</a>
-</footer>
-
-<script>
-    var navbarcollapse = document.getElementById("navbarResponsive");
-
-    // Event listener
-
-    // collapse navbar on resize
-    window.addEventListener("resize", () => {
-        var w = document.documentElement.clientWidth;
-        var h = document.documentElement.clientHeight;
-        if (w >= 992) {
-            navbarcollapse.classList.remove("show");
-        }
-    })
-    // collapse navbar on focusout
-    document.addEventListener("click", (event) => {
-        let clickedElement = event.target; // clicked element
-        if (clickedElement != navbarcollapse) {
-            $('.collapse').collapse('hide');
-        }
-    });
-</script>
 </body>
 </html>

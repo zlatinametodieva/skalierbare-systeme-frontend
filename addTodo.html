@@ -12,6 +12,7 @@
 </head>
 
 <body>
+<div class="d-flex flex-column min-vh-100">
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
     <div class="container-fluid">
@@ -23,24 +24,18 @@
             <div class="navbar-nav ml-auto">
                 <a class="nav-link" href="index.html">MY TODOs</a>
                 <a class="nav-link active" href="addTodo.html">ADD TODO</a>
-                <a class="nav-link" href="editDemonstration.html">DEMO?</a>
+                <a class="nav-link" href="editDemonstration.html">HOW TO EDIT</a>
             </div>
         </div>
     </div>
 </nav>
-
+<main class="flex-fill">
 <!-- Add Todos -->
 
 <form class="col-12 col-sm-9 col-xl-4" action="index.html">
     <div class="form-row">
-        <div class="form-group col-6">
-            <label for="todoname">TODO</label>
-            <input type="text" class="form-control" id="todoname" placeholder="My Todo">
-        </div>
-    </div>
-    <div class="form-row">
         <div class="form-group col-md-9">
-            <label for="todotext">TODO Description</label>
+            <label for="todotext">TODO</label>
             <textarea class="form-control" id="todotext" rows="3" maxlength="159" placeholder="Write down your todo..."></textarea>
         </div>
     </div>
@@ -52,10 +47,10 @@
     </div>
     <button type="submit" class="btn btn-dark" id="addBtn">ADD</button>
 </form>
-
+</main>
 <!-- Footer -->
 <footer>
-    <a class="footer-link" style="text-decoration: none" href="impressum.html">Impressum</a>
+    <a class="footer-link" href="impressum.html">Impressum</a>
 </footer>
 
 <script>
@@ -79,5 +74,6 @@
         }
     });
 </script>
+</div>
 </body>
 </html>
