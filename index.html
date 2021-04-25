@@ -17,104 +17,275 @@
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">TO-DO TRACKER</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link active" href="index.html">MY TODOs</a></li>
-            <li class="nav-item"><a class="nav-link" href="addTodo.html">ADD TODO</a></li>
-            <li class="nav-item"><a class="nav-link" href="editDemonstration.html">HOW TO EDIT</a></li>
-          </ul>
-        </div>
       </div>
     </nav>
-    <!--Table-->
     <main class="flex-fill">
+      <!--Table-->
       <div class="table-responsive">
-        <table class="table table-bordered" style="font-size:18px; max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 2.5%; margin-bottom: 2.5%;">
+        <table id="todo-table" class="table table-bordered" style="font-size:16px; max-width: 800px; margin-left: auto; margin-right: auto; margin-top: 2.5%; margin-bottom: 0%;">
           <thead>
             <th class="text-center" style="width: 5%;">#</th>
             <th class="text-left">TODO</th>
-            <th class="text-center">DEADLINE</th>
+            <th class="text-center" style="width: 15%">DEADLINE</th>
             <th class="text-center" style="width: 6%;">%</th>
             <th colspan="2" class="text-center" style="width: 25%;">ACTIONS</th>
           </thead>
           <tbody>
             <tr>
               <td class="text-center">1</td>
-              <td class="text-left">Beispielseite mit dem Bootstrap Framework anlegen.</td>
-              <td class="text-center">22/04/2021</td>
-              <td class="text-center">87</td>
-              <td class="text-center"><a href="editDemonstration.html" class="btn btn-secondary btn-edt">Edit</a></td>
-              <td class="text-center"><a href="index.html" class="btn btn-secondary btn-dlt">Delete</a></td>
+              <td id="1-text" class="text-left">Beispielseite mit dem Bootstrap Framework anlegen.</td>
+              <td id="1-date" class="text-center">2021-04-18</td>
+              <td id="1-%" class="text-center">95</td>
+              <td class="text-center"><button id="1" type="button" class="btn btn-success btn-edt" data-toggle="modal" data-target="#editModal">Edit</button></td>
+              <td class="text-center"><button type="button" class="btn btn-danger btn-dlt">Delete</button></td>
             </tr>
             <tr>
               <td class="text-center">2</td>
-              <td class="text-left">Iss und trink gelegentlich etwas.</td>
-              <td class="text-center">23/04/2021</td>
-              <td class="text-center">21</td>
-              <td class="text-center"><a href="editDemonstration.html" class="btn btn-secondary btn-edt">Edit</a></td>
-              <td class="text-center"><a href="index.html" class="btn btn-secondary btn-dlt">Delete</a></td>
+              <td id="2-text" class="text-left">Iss und trink gelegentlich etwas.</td>
+              <td id="2-date" class="text-center">2021-04-19</td>
+              <td id="2-%" class="text-center">20</td>
+              <td class="text-center"><button id="2" type="button" class="btn btn-success btn-edt" data-toggle="modal" data-target="#editModal">Edit</button></td>
+              <td class="text-center"><button type="button" class="btn btn-danger btn-dlt">Delete</button></td>
             </tr>
             <tr>
               <td class="text-center">3</td>
-              <td class="text-left">Geh mindestens einmal am Tag schlafen.</td>
-              <td class="text-center">23/04/2021</td>
-              <td class="text-center">0</td>
-              <td class="text-center"><a href="editDemonstration.html" class="btn btn-secondary btn-edt">Edit</a></td>
-              <td class="text-center"><a href="index.html" class="btn btn-secondary btn-dlt">Delete</a></td>
+              <td id="3-text" class="text-left">Geh mindestens einmal am Tag schlafen.</td>
+              <td id="3-date" class="text-center">2021-04-20</td>
+              <td id="3-%" class="text-center">0</td>
+              <td class="text-center"><button id="3" type="button" class="btn btn-success btn-edt" data-toggle="modal" data-target="#editModal">Edit</button></td>
+              <td class="text-center"><button type="button" class="btn btn-danger btn-dlt">Delete</button></td>
             </tr>
             <tr>
               <td class="text-center">4</td>
-              <td class="text-left">Flüge nach Mallorca buchen.</td>
-              <td class="text-center">25/04/2021</td>
-              <td class="text-center">99</td>
-              <td class="text-center"><a href="editDemonstration.html" class="btn btn-secondary btn-edt">Edit</a></td>
-              <td class="text-center"><a href="index.html" class="btn btn-secondary btn-dlt">Delete</a></td>
+              <td id="4-text" class="text-left">Flüge nach Mallorca buchen.</td>
+              <td id="4-date" class="text-center">2021-04-21</td>
+              <td id="4-%" class="text-center">0</td>
+              <td class="text-center"><button id="4" type="button" class="btn btn-success btn-edt" data-toggle="modal" data-target="#editModal">Edit</button></td>
+              <td class="text-center"><button type="button" class="btn btn-danger btn-dlt">Delete</button></td>
             </tr>
             <tr>
               <td class="text-center">5</td>
-              <td class="text-left">Netflix schauen.</td>
-              <td class="text-center">25/04/2021</td>
-              <td class="text-center">56</td>
-              <td class="text-center"><a href="editDemonstration.html" class="btn btn-secondary btn-edt">Edit</a></td>
-              <td class="text-center"><a href="index.html" class="btn btn-secondary btn-dlt">Delete</a></td>
+              <td id="5-text" class="text-left">Netflix schauen.</td>
+              <td id="5-date" class="text-center">2021-04-22</td>
+              <td id="5-%" class="text-center">55</td>
+              <td class="text-center"><button id="5" type="button" class="btn btn-success btn-edt" data-toggle="modal" data-target="#editModal">Edit</button></td>
+              <td class="text-center"><button type="button" class="btn btn-danger btn-dlt">Delete</button></td>
             </tr>
             <tr>
               <td class="text-center">6</td>
-              <td class="text-left">Zimmer aufräumen.</td>
-              <td class="text-center">26/04/2021</td>
-              <td class="text-center">11</td>
-              <td class="text-center"><a href="editDemonstration.html" class="btn btn-secondary btn-edt">Edit</a></td>
-              <td class="text-center"><a href="index.html" class="btn btn-secondary btn-dlt">Delete</a></td>
+              <td id="6-text" class="text-left">Zimmer aufräumen.</td>
+              <td id="6-date" class="text-center">2021-04-23</td>
+              <td id="6-%" class="text-center">10</td>
+              <td class="text-center"><button id="6" type="button" class="btn btn-success btn-edt" data-toggle="modal" data-target="#editModal">Edit</button></td>
+              <td class="text-center"><button type="button" class="btn btn-danger btn-dlt">Delete</button></td>
             </tr>
             <tr>
               <td class="text-center">7</td>
-              <td class="text-left">Pause machen.</td>
-              <td class="text-center">28/04/2021</td>
-              <td class="text-center">73</td>
-              <td class="text-center"><a href="editDemonstration.html" class="btn btn-secondary btn-edt">Edit</a></td>
-              <td class="text-center"><a href="index.html" class="btn btn-secondary btn-dlt">Delete</a></td>
+              <td id="7-text" class="text-left">Pause machen.</td>
+              <td id="7-date" class="text-center">2021-04-24</td>
+              <td id="7-%" class="text-center">75</td>
+              <td class="text-center"><button id="7" type="button" class="btn btn-success btn-edt" data-toggle="modal" data-target="#editModal">Edit</button></td>
+              <td class="text-center"><button type="button" class="btn btn-danger btn-dlt">Delete</button></td>
             </tr>
             <tr>
               <td class="text-center">8</td>
-              <td class="text-left">Pizza bestellen.</td>
-              <td class="text-center">28/04/2021</td>
-              <td class="text-center">0</td>
-              <td class="text-center"><a href="editDemonstration.html" class="btn btn-secondary btn-edt">Edit</a></td>
-              <td class="text-center"><a href="index.html" class="btn btn-secondary btn-dlt">Delete</a></td>
+              <td id="8-text" class="text-left">Pizza bestellen.</td>
+              <td id="8-date" class="text-center">2021-04-25</td>
+              <td id="8-%" class="text-center">0</td>
+              <td class="text-center"><button id="8" type="button" class="btn btn-success btn-edt" data-toggle="modal" data-target="#editModal">Edit</button></td>
+              <td class="text-center"><button type="button" class="btn btn-danger btn-dlt">Delete</button></td>
             </tr>
           </tbody>
         </table>
+      </div>
+      <!--ADD Button-->
+      <div class="container-fluid text-center" style="padding-top: 15px; padding-bottom: 35px;">
+        <button id="addBtnTable" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addModal"><strong>ADD TODO</strong></button>          
+      </div>
+      <!--EDIT Modal-->
+      <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <form class="container-fluid">
+                <div class="form-group">
+                  <label for="todotext" class="col-form-label">TODO</label>
+                  <textarea id="to-edit" class="form-control" rows="3" maxlength="159"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="datepicker" class="col-form-label"></label>Deadline</label>
+                  <input id="date" type="date" class="form-control">
+                </div>
+                <div class="form-group">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <label id="progr" class="input-group-text">Progress</label>
+                    </div>
+                    <select id="prog" class="custom-select 1-100"></select>
+                  </div>
+                </div>
+                <button id="addBtn" type="button" class="btn btn-secondary" onclick="editElement()">SAVE</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--ADD Modal-->
+      <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <form class="container-fluid">
+                <div class="form-group">
+                  <label for="todotext" class="col-form-label">TODO</label>
+                  <textarea id="to-do" class="form-control" rows="3" maxlength="159" placeholder="Write down your todo..."></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="datepicker" class="col-form-label"></label>Deadline</label>
+                  <input id="deadline" type="date" class="form-control">
+                </div>
+                <button id="addBtn" type="button" class="btn btn-secondary" onclick="newElement()">ADD</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <!--Footer-->
     <footer>
       <a class="footer-link" href="impressum.html">Impressum</a>
     </footer>
-  
+    
     <script>
+      // Modal Progress Dropdown
+      $(function(){
+        var $select = $(".1-100");
+        for (i = 0; i <= 100; i++) {
+          $select.append($('<option></option>').val(i).html(i))
+        }
+      });
+
+      // EDIT
+      var temp;
+      $("button").click(function() {
+          var txt = this.id + "-text";
+          var dline = this.id + "-date";
+          var percent = this.id + "-%";
+          document.getElementById("to-edit").value = document.getElementById(txt).textContent;
+          document.getElementById("date").value = document.getElementById(dline).textContent;
+          document.getElementById("prog").value = document.getElementById(percent).textContent;
+          temp = this.id;
+      });
+
+      function editElement() {
+        // NEW TODO
+        var doInput = document.getElementById("to-edit").value;
+        var newTodo = document.createTextNode(doInput);
+        var newTd = document.createElement("td");
+        newTd.setAttribute("id", temp + "-text");
+        newTd.setAttribute("class", "text-left");
+        newTd.appendChild(newTodo);
+        
+        // NEW DEADLINE
+        var dateInput = document.getElementById("date").value;
+        var newDate = document.createTextNode(dateInput);
+        var newDeadline = document.createElement("td");
+        newDeadline.setAttribute("id", temp + "-date");
+        newDeadline.setAttribute("class", "text-center");
+        newDeadline.appendChild(newDate);
+        
+        // NEW PROGRESS
+        var progInput = document.getElementById("prog").value;
+        var newProg = document.createTextNode(progInput);
+        var newPr = document.createElement("td");
+        newPr.setAttribute("id", temp + "-%");
+        newPr.setAttribute("class", "text-center");
+        newPr.appendChild(newProg);
+
+        if (doInput === '') {
+          alert("You must write something!");
+        }
+        else {
+          $('#editModal').modal('hide');
+          document.getElementById(temp + "-text").replaceWith(newTd);
+          document.getElementById(temp + "-date").replaceWith(newDeadline);
+          document.getElementById(temp + "-%").replaceWith(newPr);
+        }
+      }
+
+      // ADD ROW
+      var n = 9;
+      function newElement() {
+        var row = document.createElement("tr");
+
+        // #
+        var count = document.createTextNode(`${n}`);
+        var countTbl = document.createElement("td");
+        countTbl.setAttribute("class", "text-center");
+        countTbl.appendChild(count);
+        row.appendChild(countTbl);
+        
+        // TODO
+        var todoInput = document.getElementById("to-do").value;
+        var todo = document.createTextNode(todoInput);
+        var todoTbl = document.createElement("td");
+        todoTbl.setAttribute("class", "text-left");
+        todoTbl.appendChild(todo);
+        row.appendChild(todoTbl);
+        
+        // DEADLINE
+        var deadlineInput = document.getElementById("deadline").value;
+        var deadline = document.createTextNode(deadlineInput);
+        var deadlineTbl = document.createElement("td");
+        deadlineTbl.setAttribute("class", "text-center");
+        deadlineTbl.appendChild(deadline);
+        row.appendChild(deadlineTbl);
+
+        // %
+        var progress = document.createTextNode("0");
+        var progressTbl = document.createElement("td");
+        progressTbl.setAttribute("class", "text-center");
+        progressTbl.appendChild(progress);
+        row.appendChild(progressTbl);
+
+        // EDIT BUTTON
+        var editBtn = document.createElement("BUTTON");
+        var editBtnTxt = document.createTextNode("Edit");
+        editBtn.appendChild(editBtnTxt);
+        editBtn.setAttribute("class", "btn btn-success btn-edt");
+        editBtn.setAttribute("data-toggle", "modal");
+        editBtn.setAttribute("data-target", "#editModal");
+        var editBtnTbl = document.createElement("td");
+        editBtnTbl.setAttribute("class", "text-center");
+        editBtnTbl.appendChild(editBtn);
+        row.appendChild(editBtnTbl);
+        
+        // DELETE BUTTON
+        var deleteBtn = document.createElement("BUTTON");
+        var deleteBtnTxt = document.createTextNode("Delete");
+        deleteBtn.appendChild(deleteBtnTxt);
+        deleteBtn.setAttribute("class", "btn btn-danger btn-dlt");
+        var deleteBtnTbl = document.createElement("td");
+        deleteBtnTbl.setAttribute("class", "text-center");
+        deleteBtnTbl.appendChild(deleteBtn);
+        row.appendChild(deleteBtnTbl);
+
+        if (todoInput === '') {
+          alert("You must write something!");
+        }
+        else if (deadlineInput === '') {
+          alert("You must pick a date!");
+        }
+        else {
+          document.getElementById("todo-table").appendChild(row);
+          document.getElementById("to-do").value = "";
+          document.getElementById("deadline").value = "";
+          n++;
+          $('#addModal').modal('hide');
+        }
+      }
+    
+      
       var navbarcollapse = document.getElementById("navbarResponsive");
     
       // Event listener

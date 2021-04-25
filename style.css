@@ -17,7 +17,7 @@ html, body {
     padding-left: 15px;
     padding-right: 15px;
     z-index: 9999;
-    font-size: 19px;
+    font-size: 18px;
 }
 
 .navbar-brand {
@@ -84,6 +84,18 @@ html, body {
 }
 
 /*  TABLE  */
+#addBtnTable {
+    background-color: #ffe7d5 !important;
+    color: #222 !important;
+    border-color: #222 !important;
+    font-size: 16px;
+    border-radius: 0.4rem;
+}
+
+#addBtnTable:hover {
+    background-color: #fdd4b6 !important;
+}
+
 .btn-dlt {
     background-color: #BC5449;
     border-color: #222;
@@ -108,6 +120,19 @@ html, body {
     border-color: #222;
 }
 
+.btn-success.focus, .btn-success:focus {
+    color: #222;
+    background-color: #8EB69B;
+    border-color: #222;
+    box-shadow: none;
+}
+
+.btn-success:not(:disabled):not(.disabled).active, .btn-success:not(:disabled):not(.disabled):active, .show>.btn-success.dropdown-toggle {
+    color: #222;
+    background-color: #99cca8;
+    border-color: #222;
+}
+
 tr {
     background-color: #fffbf9;
 }
@@ -122,6 +147,22 @@ th {
 
 th:hover {
     background-color: #fde6d5;
+}
+
+/*  MODAL  */
+.modal-body {
+    background-color: #0d3133;
+    padding: 0%;
+}
+
+#progr {
+    background-color: #0d3133;
+    color: #efe9ce;
+    border-color: #efe9ce;
+}
+
+#percent:focus {
+    border-color: #efe9ce;
 }
 
 /*  FOOTER  */
@@ -149,23 +190,22 @@ a.footer-link.active {
 /*  ADD SECTION  */
 form {
     color: #efe9ce;
-    border: 1px solid #efe9ce;
     padding: 20px;
-    margin: 40px auto;
     background-color: #0d3133;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #addBtn {
-    background-color: #efe9ce !important;
-    color: #222 !important;
-    border-color: #092729 !important;
+    background-color: #fddcc4 !important;
+    color: black;
+    border-color: black !important;
+    border: 1.25px solid;
+    font-size: 16px;
+    border-radius: 0.4rem;
 }
 
 #addBtn:hover {
-    background-color: #A3958D !important;
-    color: #fff !important;
-    border-color: #092729 !important;
+    background-color: #fdceab !important;
 }
 
 /*  Impressum  */
