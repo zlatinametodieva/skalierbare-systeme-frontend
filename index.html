@@ -113,7 +113,7 @@
                   <textarea id="to-edit" class="form-control" rows="3" maxlength="159"></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="date" class="col-form-label"></label>Deadline</label>
+                  <label for="date" class="col-form-label">Deadline</label>
                   <input id="date" type="date" class="form-control">
                 </div>
                 <div class="form-group">
@@ -141,7 +141,7 @@
                   <textarea id="to-do" class="form-control" rows="3" maxlength="159" placeholder="Write down your todo..."></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="deadline" class="col-form-label"></label>Deadline</label>
+                  <label for="deadline" class="col-form-label">Deadline</label>
                   <input id="deadline" type="date" class="form-control">
                 </div>
                 <button id="addBtnAdd" type="button" class="btn btn-secondary" onclick="newElement()">ADD</button>
@@ -161,7 +161,7 @@
       $(function(){
         var $select = $(".1-100");
         for (i = 0; i <= 100; i++) {
-          $select.append($('<option></option>').val(i).html(i))
+          $select.append($('<option></option>').val(i).html(i));
         }
       });
 
