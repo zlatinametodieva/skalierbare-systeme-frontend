@@ -195,7 +195,7 @@ form {
     font-size: 16px;
 }
 
-#addBtn {
+#addBtnEdit,#addBtnAdd {
     background-color: #fddcc4 !important;
     color: black;
     border-color: black !important;
@@ -204,7 +204,7 @@ form {
     border-radius: 0.4rem;
 }
 
-#addBtn:hover {
+#addBtnEdit:hover, #addBtnAdd:hover {
     background-color: #fdceab !important;
 }
 

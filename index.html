@@ -109,22 +109,22 @@
             <div class="modal-body">
               <form class="container-fluid">
                 <div class="form-group">
-                  <label for="todotext" class="col-form-label">TODO</label>
+                  <label for="to-edit" class="col-form-label">TODO</label>
                   <textarea id="to-edit" class="form-control" rows="3" maxlength="159"></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="datepicker" class="col-form-label"></label>Deadline</label>
+                  <label for="date" class="col-form-label"></label>Deadline</label>
                   <input id="date" type="date" class="form-control">
                 </div>
                 <div class="form-group">
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <label id="progr" class="input-group-text">Progress</label>
+                      <label id="progr" for="prog" class="input-group-text">Progress</label>
                     </div>
                     <select id="prog" class="custom-select 1-100"></select>
                   </div>
                 </div>
-                <button id="addBtn" type="button" class="btn btn-secondary" onclick="editElement()">SAVE</button>
+                <button id="addBtnEdit" type="button" class="btn btn-secondary" onclick="editElement()">SAVE</button>
               </form>
             </div>
           </div>
@@ -137,14 +137,14 @@
             <div class="modal-body">
               <form class="container-fluid">
                 <div class="form-group">
-                  <label for="todotext" class="col-form-label">TODO</label>
+                  <label for="to-do" class="col-form-label">TODO</label>
                   <textarea id="to-do" class="form-control" rows="3" maxlength="159" placeholder="Write down your todo..."></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="datepicker" class="col-form-label"></label>Deadline</label>
+                  <label for="deadline" class="col-form-label"></label>Deadline</label>
                   <input id="deadline" type="date" class="form-control">
                 </div>
-                <button id="addBtn" type="button" class="btn btn-secondary" onclick="newElement()">ADD</button>
+                <button id="addBtnAdd" type="button" class="btn btn-secondary" onclick="newElement()">ADD</button>
               </form>
             </div>
           </div>
@@ -167,17 +167,20 @@
 
       // EDIT
       var temp;
-      $("button").click(function() {
-          var txt = this.id + "-text";
-          var dline = this.id + "-date";
-          var percent = this.id + "-%";
-          document.getElementById("to-edit").value = document.getElementById(txt).textContent;
-          document.getElementById("date").value = document.getElementById(dline).textContent;
-          document.getElementById("prog").value = document.getElementById(percent).textContent;
-          temp = this.id;
-      });
+      $(".btn.btn-success.btn-edt").click(clickEdit)
+      function clickEdit(){
+        console.log("btn event")
+        var txt = this.id + "-text";
+        var dline = this.id + "-date";
+        var percent = this.id + "-%";
+        document.getElementById("to-edit").value = document.getElementById(txt).textContent;
+        document.getElementById("date").value = document.getElementById(dline).textContent;
+        document.getElementById("prog").value = document.getElementById(percent).textContent;
+        temp = this.id;
+      }
 
       function editElement() {
+        console.log("editElement")
         // NEW TODO
         var doInput = document.getElementById("to-edit").value;
         var newTodo = document.createTextNode(doInput);
@@ -185,7 +188,6 @@
         newTd.setAttribute("id", temp + "-text");
         newTd.setAttribute("class", "text-left");
         newTd.appendChild(newTodo);
-        
         // NEW DEADLINE
         var dateInput = document.getElementById("date").value;
         var newDate = document.createTextNode(dateInput);
@@ -216,6 +218,7 @@
       // ADD ROW
       var n = 9;
       function newElement() {
+        console.log("newElement")
         var row = document.createElement("tr");
 
         // #
@@ -230,6 +233,7 @@
         var todo = document.createTextNode(todoInput);
         var todoTbl = document.createElement("td");
         todoTbl.setAttribute("class", "text-left");
+        todoTbl.setAttribute("id",n+"-text")
         todoTbl.appendChild(todo);
         row.appendChild(todoTbl);
         
@@ -238,6 +242,7 @@
         var deadline = document.createTextNode(deadlineInput);
         var deadlineTbl = document.createElement("td");
         deadlineTbl.setAttribute("class", "text-center");
+        deadlineTbl.setAttribute("id",n+"-date")
         deadlineTbl.appendChild(deadline);
         row.appendChild(deadlineTbl);
 
@@ -245,6 +250,7 @@
         var progress = document.createTextNode("0");
         var progressTbl = document.createElement("td");
         progressTbl.setAttribute("class", "text-center");
+        progressTbl.setAttribute("id",n+"-%")
         progressTbl.appendChild(progress);
         row.appendChild(progressTbl);
 
@@ -253,8 +259,10 @@
         var editBtnTxt = document.createTextNode("Edit");
         editBtn.appendChild(editBtnTxt);
         editBtn.setAttribute("class", "btn btn-success btn-edt");
+        editBtn.setAttribute("id",parseInt(n))
         editBtn.setAttribute("data-toggle", "modal");
         editBtn.setAttribute("data-target", "#editModal");
+        editBtn.addEventListener('click',clickEdit);
         var editBtnTbl = document.createElement("td");
         editBtnTbl.setAttribute("class", "text-center");
         editBtnTbl.appendChild(editBtn);
@@ -277,7 +285,7 @@
           alert("You must pick a date!");
         }
         else {
-          document.getElementById("todo-table").appendChild(row);
+          document.getElementsByTagName("tbody")[0].appendChild(row);
           document.getElementById("to-do").value = "";
           document.getElementById("deadline").value = "";
           n++;
